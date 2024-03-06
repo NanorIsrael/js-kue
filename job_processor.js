@@ -11,15 +11,6 @@ queue.process('push_notification_code', (job, done) => {
 });
 
 
-// Event handlers for completed and failed jobs
-queue.on('job complete', (id) => {
-	console.log('Notification job completed');
-});
-
-queue.on('job failed', (id, err) => {
-	console.log('Notification job failed');
-});
-
 // Listen to the queue
 queue.on('ready', () => {
 	queue.process('push_notification_code', (job, done) => {
